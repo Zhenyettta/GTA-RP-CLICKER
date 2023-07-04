@@ -60,5 +60,5 @@ def main_loop(template_paths):
 
 if __name__ == '__main__':
     template_paths = [
-        'C:/Users/Zhenya/Downloads/boba2.jpeg']
+        'boba2.jpeg']
     main_loop(template_paths)
