@@ -85,39 +85,43 @@ def going_up():
 
 
 def second_boba():
+    start_time = time.time()
     while True:
         frame = capture_screen()
         rect_y = boba_rect(frame)
         fish_y = boba_fish(frame)
+        elapsed_time = time.time() - start_time
+        formatted_time = "{:.3f}".format(elapsed_time)
+        print("rect = ", rect_y, " fish = ", fish_y, f"Time: {formatted_time}")
 
-        while abs(rect_y - fish_y) > 30:
-            move(' ')
-            time.sleep(0.08)
-            stop(' ')
-            time.sleep(0.02)
-            frame = capture_screen()
-            rect_y = boba_rect(frame)
-            fish_y = boba_fish(frame)
-
-        while abs(rect_y - fish_y) < 30:
-            while going_up():
-                move(' ')
-                time.sleep(0.11)
-                stop(' ')
-                time.sleep(0.06)
-                frame = capture_screen()
-                rect_y = boba_rect(frame)
-                fish_y = boba_fish(frame)
-                print('up')
-            while not going_up():
-                move(' ')
-                time.sleep(0.11)
-                stop(' ')
-                time.sleep(0.08)
-                frame = capture_screen()
-                rect_y = boba_rect(frame)
-                fish_y = boba_fish(frame)
-                print('down')
+        # while abs(rect_y - fish_y) > 30:
+        #     move(' ')
+        #     time.sleep(0.08)
+        #     stop(' ')
+        #     time.sleep(0.02)
+        #     frame = capture_screen()
+        #     rect_y = boba_rect(frame)
+        #     fish_y = boba_fish(frame)
+        #
+        # while abs(rect_y - fish_y) < 30:
+        #     while going_up():
+        #         move(' ')
+        #         time.sleep(0.11)
+        #         stop(' ')
+        #         time.sleep(0.06)
+        #         frame = capture_screen()
+        #         rect_y = boba_rect(frame)
+        #         fish_y = boba_fish(frame)
+        #         print('up')
+        #     while not going_up():
+        #         move(' ')
+        #         time.sleep(0.11)
+        #         stop(' ')
+        #         time.sleep(0.08)
+        #         frame = capture_screen()
+        #         rect_y = boba_rect(frame)
+        #         fish_y = boba_fish(frame)
+        #         print('down')
 
         # if rect_y is not None and abs(rect_y - fish_y) < 5:
         #     while going_up():

@@ -46,11 +46,11 @@ def char2key(c):
 
 def makeMove():
     move('s')
-    time.sleep(1)
+    time.sleep(0.8)
     stop('s')
 
     move('w')
-    time.sleep(0.4)
+    time.sleep(0.6)
     stop('w')
 
     time.sleep(0.5)
