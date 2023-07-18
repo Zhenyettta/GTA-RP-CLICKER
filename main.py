@@ -1,3 +1,5 @@
+#  Copyright (c) Made by Zhenyok!
+
 import random
 import time
 from ctypes import windll
